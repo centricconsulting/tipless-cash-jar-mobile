@@ -51,6 +51,7 @@ namespace TiplessCashJar
 
 			if (response.IsSuccessStatusCode) {
 				String confirmation = await response.Content.ReadAsStringAsync ();
+				DisplayAlert("Tipless Cash Jar", "Thank you for donating $" + myAmount.ToString(), "OK");
 			}
 		}
 			
