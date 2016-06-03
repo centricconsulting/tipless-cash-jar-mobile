@@ -9,18 +9,10 @@ namespace TiplessCashJar
 		Button loginButton = new Button {
 			Text = "Login"
 		};
-
-		Entry username = new Entry {
-			Placeholder = "Username"
-		};
-
-		Entry password = new Entry  {
-			IsPassword = true,
-			Placeholder = "Password"
-		};
-
+				
 		public MainPage ()
 		{
+			this.Title = "Tipless Cash Jar";
 
 			loginButton.Clicked += async (object sender, EventArgs e) => {
 				await Navigation.PushAsync (new LoginPage ());
@@ -28,8 +20,6 @@ namespace TiplessCashJar
 
 			Content = new StackLayout { 
 				Children = {
-					username,
-					password,
 					loginButton,
 				}
 			};

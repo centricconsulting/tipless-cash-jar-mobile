@@ -9,7 +9,7 @@ namespace TiplessCashJar
 		public App ()
 		{
 			// The root page of your application
-			MainPage = new NavigationPage( new TiplessCashJar.MainPage());
+			MainPage = new NavigationPage( new TiplessCashJar.LoginPage());
 		}
 			
 		protected override void OnStart ()
