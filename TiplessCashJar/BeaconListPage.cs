@@ -26,8 +26,9 @@ namespace TiplessCashJar
 			deviceListView.ItemSelected += BeaconSelected;
 
 			// test beacons
-			beacons.Add(new Beacon("badge 1", 0, "DD915E3B-072C-4223-9A54-308390986793", 57497, 25695, Beacon.Proximity.VeryFar));
-			beacons.Add(new Beacon("badge 2", 0, "DD915E3B-072C-4223-9A54-308390986793", 17356, 56347, Beacon.Proximity.VeryFar));
+//			beacons.Add(new Beacon("badge 1", 0, "DD915E3B-072C-4223-9A54-308390986793", 57497, 25695, Beacon.Proximity.VeryFar));
+//			beacons.Add(new Beacon("badge 2", 0, "DD915E3B-072C-4223-9A54-308390986793", 17356, 56347, Beacon.Proximity.VeryFar));
+			beacons = App.Beacons;
 
 			if (App.BeaconManager != null) {
 				App.BeaconManager.BeaconsFound += BeaconsFound;
