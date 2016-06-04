@@ -19,7 +19,8 @@ namespace TiplessCashJar
 		{
 			this.Title = "Account Activity";
 
-			Content = new StackLayout { 
+            this.BackgroundColor = Color.FromHex("#C3CFF7");
+            Content = new StackLayout { 
 				Padding = new Thickness(20),
 				Children = {
 					accountListView
