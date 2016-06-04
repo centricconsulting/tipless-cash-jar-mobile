@@ -39,6 +39,7 @@ namespace TiplessCashJar.iOS
 		public void StopScanning() {
 
 			foreach (var region in regions) {
+				locationMgr.StopRangingBeacons (region);
 				locationMgr.StopMonitoring (region);
 			}
 
