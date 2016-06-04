@@ -34,6 +34,10 @@ namespace TiplessCashJar
 			get {
 				return distance;
 			}
+
+			set {
+				distance = value;
+			}
 		}
 
 		public string UUID {

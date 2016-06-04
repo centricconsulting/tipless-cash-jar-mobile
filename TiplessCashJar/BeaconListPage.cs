@@ -58,8 +58,10 @@ namespace TiplessCashJar
 				foreach (var beacon in e.Beacons) {
 					var myBeacon = beacons.Find (Beacon.Matcher (beacon));
 
-					if (myBeacon != null)
+					if (myBeacon != null) {
+						myBeacon.Distance = beacon.Distance;
 						DiscoveredBeacons.Add (myBeacon);
+					}
 				}
 			}
 		}
