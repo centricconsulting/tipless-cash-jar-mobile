@@ -19,6 +19,10 @@ namespace TiplessCashJar
 			Placeholder = "Password"
 		};
 
+        Button createProfileButton = new Button {
+            Text = "Create Profile"
+        };
+
 		public LoginPage ()
 		{
 			this.Title = "Tipless Cash Jar";
@@ -34,6 +38,11 @@ namespace TiplessCashJar
 			loginButton.Clicked += async (object sender, EventArgs e) => {
 				await Navigation.PushAsync(new DashboardPage());
 			};
+
+            createProfileButton.Clicked += async (object sender, EventArgs e) =>
+            {
+                await Navigation.PushAsync(new ProfilePage());
+            };
 
 		}
 	}
