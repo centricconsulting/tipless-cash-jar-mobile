@@ -29,7 +29,7 @@ namespace TiplessCashJar
 
 			Content = new StackLayout { 
 				Children = {
-					donateButton,
+//					donateButton,
 					profileButton,
 					beaconsButton
 				}
