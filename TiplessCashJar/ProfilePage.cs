@@ -89,7 +89,7 @@ namespace TiplessCashJar
 
             Content = scrollView;
             
-            saveProfileButton.Clicked += async (object sender, EventArgs e) => {
+            saveProfileButton.Clicked += async (object sender, EventArgs e) => {                
                 var userProfile = new UserProfile {
                     FirstName = firstName.Text,
                     LastName = lastName.Text,
@@ -113,7 +113,7 @@ namespace TiplessCashJar
                 await Navigation.PushAsync(new CreditCardInformationPage());
             };
         }
-	}
+    }
 }
 
 

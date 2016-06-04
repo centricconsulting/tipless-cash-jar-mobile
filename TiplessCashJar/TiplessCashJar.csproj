@@ -32,8 +32,12 @@
   <ItemGroup>
     <Compile Include="BankAcountInformationPage.cs" />
     <Compile Include="CreditCardInformationPage.cs" />
+    <Compile Include="ILocation.cs" />
     <Compile Include="Models\BankAccount.cs" />
     <Compile Include="Models\CreditCard.cs" />
+    <Compile Include="Models\Recipient.cs" />
+    <Compile Include="Models\TransactionDetails.cs" />
+    <Compile Include="Models\Transactions.cs" />
     <Compile Include="Models\UserProfile.cs" />
     <Compile Include="TiplessCashJar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
