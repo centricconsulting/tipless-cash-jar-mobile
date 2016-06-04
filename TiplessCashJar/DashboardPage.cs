@@ -22,7 +22,13 @@ namespace TiplessCashJar
             BackgroundColor = Color.FromHex("#A1B5F7")
         };
 
-		Button beaconsButton = new Button {
+        Button accountActivityButton = new Button
+        {
+            Text = "Account Activity",
+            BackgroundColor = Color.FromHex("#A1B5F7")
+        };
+
+        Button beaconsButton = new Button {
 			Text = "Beacons",
             BackgroundColor = Color.FromHex("#A1B5F7")
         };
@@ -36,7 +42,8 @@ namespace TiplessCashJar
             Children = {
 //					donateButton,
 					profileButton,
-					beaconsButton
+                    accountActivityButton,
+                    beaconsButton
 				}
 			};
 
@@ -48,7 +55,11 @@ namespace TiplessCashJar
 				await Navigation.PushAsync(new ProfilePage());
 			};
 
-			beaconsButton.Clicked += async (object sender, EventArgs e) => {
+            accountActivityButton.Clicked += async (object sender, EventArgs e) => {
+                await Navigation.PushAsync(new AccountActivityPage());
+            };
+
+            beaconsButton.Clicked += async (object sender, EventArgs e) => {
 				await Navigation.PushAsync(new BeaconListPage());
 			};
 		}
