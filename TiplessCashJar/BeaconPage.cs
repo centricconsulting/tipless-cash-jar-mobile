@@ -1,15 +1,13 @@
 ﻿using System;
 
 using Xamarin.Forms;
-using BluetoothLE.Core;
 using System.Collections.ObjectModel;
-using BluetoothLE.Core.Events;
 
 namespace TiplessCashJar
 {
 	public class BeaconPage : ContentPage
 	{
-		private readonly IDevice _device;
+		private readonly Beacon beacon;
 
 		Label name = new Label {
 			Text = "name"
@@ -19,13 +17,13 @@ namespace TiplessCashJar
 			Text = "id"
 		};
 
-		public BeaconPage (IDevice device)
+		public BeaconPage (Beacon beacon)
 		{
 
-			_device = device;
+			this.beacon = beacon;
 
-			name.Text = device.Name;
-			id.Text = device.Id.ToString();
+			name.Text = beacon.Name;
+			id.Text = beacon.UUID;
 
 			Content = new StackLayout {
 				Children = {
@@ -34,24 +32,8 @@ namespace TiplessCashJar
 				}
 			};
 
-			BindingContext = _device;
-
-			App.BluetoothAdapter.DeviceDisconnected += DeviceDisconnected;
+			BindingContext = beacon;
 		}
-
-
-		void DeviceDisconnected (object sender, DeviceConnectionEventArgs e)
-		{
-			// todo: stale
-		}
-
-		protected override bool OnBackButtonPressed()
-		{
-			App.BluetoothAdapter.DeviceDisconnected -= DeviceDisconnected;
-			App.BluetoothAdapter.DisconnectDevice(_device);
-
-			return base.OnBackButtonPressed();
-		}			
 	}
 }
 

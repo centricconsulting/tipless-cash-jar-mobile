@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 
 using Xamarin.Forms;
-using BluetoothLE.Core;
-using BluetoothLE.Core.Events;
 using System.Collections.ObjectModel;
 
 namespace TiplessCashJar
@@ -11,7 +9,7 @@ namespace TiplessCashJar
 	public class BeaconListPage : ContentPage
 	{
 		ListView deviceListView = new ListView();
-		public ObservableCollection<IDevice> DiscoveredDevices { get; private set; }
+		public ObservableCollection<Beacon> DiscoveredBeacons { get; private set; }
 
 		public BeaconListPage ()
 		{
@@ -21,36 +19,51 @@ namespace TiplessCashJar
 				}
 			};
 
-			DiscoveredDevices = new ObservableCollection<IDevice>();
+			DiscoveredBeacons = new ObservableCollection<Beacon>();
 
-			deviceListView.ItemsSource = DiscoveredDevices;
-			deviceListView.ItemSelected += DeviceSelected;
+			deviceListView.ItemsSource = DiscoveredBeacons;
+			deviceListView.ItemSelected += BeaconSelected;
 
-			App.BluetoothAdapter.DeviceDiscovered += DeviceDiscovered;
-			App.BluetoothAdapter.DeviceConnected += DeviceConnected;
-			App.BluetoothAdapter.StartScanningForDevices();
+//			App.BluetoothAdapter.DeviceDiscovered += DeviceDiscovered;
+//			App.BluetoothAdapter.DeviceConnected += DeviceConnected;
+//			App.BluetoothAdapter.StartScanningForDevices();
+
+			App.BeaconManager.BeaconsFound += BeaconsFound;
+
+			List<Beacon> beacons = new List<Beacon> ();
+			// test beacon
+			beacons.Add(new Beacon("badge 1", 0, "DD915E3B-072C-4223-9A54-308390986793", 57497, 25695, Beacon.Proximity.VeryFar));
+			beacons.Add(new Beacon("badge 2", 0, "DD915E3B-072C-4223-9A54-308390986793", 17356, 56347, Beacon.Proximity.VeryFar));
+
+			App.BeaconManager.StartScanning (beacons);
 		}
 
-		void DeviceSelected (object sender, SelectedItemChangedEventArgs e)
+		void BeaconSelected (object sender, SelectedItemChangedEventArgs e)
 		{
-			var device = e.SelectedItem as IDevice;
-			if (device != null) {
-				App.BluetoothAdapter.ConnectToDevice(device);
+			var beacon = e.SelectedItem as Beacon;
+			if (beacon != null) {
+				Navigation.PushAsync (new BeaconPage (beacon));
 			}
 		}
 
-		#region BluetoothAdapter callbacks
-
-		void DeviceDiscovered (object sender, DeviceDiscoveredEventArgs e)
+		protected override void OnDisappearing ()
 		{
-			DiscoveredDevices.Add(e.Device);
+			App.BeaconManager.StopScanning ();
+			base.OnDisappearing ();
 		}
 
-		void DeviceConnected (object sender, DeviceConnectionEventArgs e)
+		#region BeaconManager callbacks
+		void BeaconsFound (object sender, BeaconsFoundEventArgs e)
 		{
-			Navigation.PushAsync(new BeaconPage(e.Device));
-		}
+			if (e.Beacons.Count > 0) {
+				DiscoveredBeacons.Clear ();
 
+				foreach (var beacon in e.Beacons) {
+					DiscoveredBeacons.Add (beacon);
+				}
+			}
+		}
+			
 		#endregion
 	}
 }
