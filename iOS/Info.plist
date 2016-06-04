@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleDisplayName</key>
-	<string>TiplessCashJar</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.centricconsulting.tiplesscashjar</string>
 	<key>CFBundleShortVersionString</key>
@@ -37,5 +35,7 @@
 	<string>Tipless Cash Jar needs your location for beacons</string>
 	<key>UIMainNibFile</key>
 	<string>LaunchScreen</string>
+	<key>CFBundleName</key>
+	<string>OpenAlms</string>
 </dict>
 </plist>

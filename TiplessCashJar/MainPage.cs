@@ -12,7 +12,7 @@ namespace TiplessCashJar
 				
 		public MainPage ()
 		{
-			this.Title = "Tipless Cash Jar";
+			this.Title = "OpenAlms";
 
 			loginButton.Clicked += async (object sender, EventArgs e) => {
 				await Navigation.PushAsync (new LoginPage ());

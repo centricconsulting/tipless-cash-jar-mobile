@@ -25,7 +25,7 @@ namespace TiplessCashJar
 
 		public LoginPage ()
 		{
-			this.Title = "Tipless Cash Jar";
+			this.Title = "OpenAlms";
 
 			Content = new StackLayout { 
 				Children = {
