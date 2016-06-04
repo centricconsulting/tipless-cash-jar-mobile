@@ -17,6 +17,8 @@ namespace TiplessCashJar
 
 		public AccountActivityPage ()
 		{
+			this.Title = "Account Activity";
+
 			Content = new StackLayout { 
 				Padding = new Thickness(20),
 				Children = {
