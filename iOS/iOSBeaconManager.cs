@@ -75,7 +75,7 @@ namespace TiplessCashJar.iOS
 						break;
 					}
 
-					Beacon beacon = new Beacon("", clBeacon.Accuracy, clBeacon.ProximityUuid.ToString(), clBeacon.Major.Int32Value, clBeacon.Minor.Int32Value, prox);
+					Beacon beacon = new Beacon("", clBeacon.Accuracy, clBeacon.ProximityUuid.AsString(), clBeacon.Major.Int32Value, clBeacon.Minor.Int32Value, prox);
 					beacons.Add(beacon);
 				}
 
