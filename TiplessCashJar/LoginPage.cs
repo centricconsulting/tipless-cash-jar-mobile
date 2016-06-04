@@ -31,7 +31,8 @@ namespace TiplessCashJar
 				Children = {
 					username,
 					password,
-					loginButton
+					loginButton,
+                    createProfileButton
 				}
 			};
 
