@@ -8,6 +8,8 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Xamarin.Forms;
+using BluetoothLE.Core;
+using BluetoothLE.Droid;
 
 namespace TiplessCashJar.Droid
 {
@@ -20,7 +22,7 @@ namespace TiplessCashJar.Droid
 
 			global::Xamarin.Forms.Forms.Init (this, bundle);
 
-			DependencyService.Register<IAdapter, Adapter> ();
+			DependencyService.Register<BluetoothLE.Core.IAdapter, BluetoothLE.Droid.Adapter> ();
 
 			LoadApplication (new App ());
 		}
