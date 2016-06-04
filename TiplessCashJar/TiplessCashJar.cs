@@ -20,8 +20,9 @@ namespace TiplessCashJar
 		public App ()
 		{
 			// The root page of your application
-			MainPage = new NavigationPage( new TiplessCashJar.LoginPage());
-		}
+			MainPage = new NavigationPage(new TiplessCashJar.LoginPage()) {BarBackgroundColor = Color.FromHex("#A1B5F7") };
+            MainPage.BackgroundColor = Color.FromHex("#BBC7F2");            
+        }
 			
 		protected override void OnStart ()
 		{

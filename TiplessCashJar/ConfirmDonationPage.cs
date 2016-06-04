@@ -10,8 +10,9 @@ namespace TiplessCashJar
 	public class ConfirmDonationPage : ContentPage
 	{
 		Button confirmButton = new Button {
-			Text = "Confirm"
-		};
+			Text = "Confirm",
+            BackgroundColor = Color.FromHex("#A1B5F7")
+        };
 
 		private int amount = 0;
 
@@ -19,9 +20,11 @@ namespace TiplessCashJar
 		{
 			this.Title = String.Format("Confirm ${0}", amount);
 			this.amount = amount;
+            this.BackgroundColor = Color.FromHex("#C3CFF7");
 
-			Content = new StackLayout { 
-				Children = {
+            Content = new StackLayout {
+                Padding = new Thickness(20),
+                Children = {
 					confirmButton
 				}
 			};

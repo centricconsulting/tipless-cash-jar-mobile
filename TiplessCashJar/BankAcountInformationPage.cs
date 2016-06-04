@@ -29,12 +29,14 @@ namespace TiplessCashJar
 
         Button saveBankAccountButton = new Button
         {
-            Text = "Save Profile"
+            Text = "Save Profile",
+            BackgroundColor = Color.FromHex("#A1B5F7")
         };
 
         Button deleteBankAccountButton = new Button
         {
-            Text = "Delete Account"
+            Text = "Delete Account",
+            BackgroundColor = Color.FromHex("#A1B5F7")
         };
 
         #endregion
@@ -42,9 +44,11 @@ namespace TiplessCashJar
         public BankAcountInformationPage()
         {
             this.Title = "Add Bank Account";
+            this.BackgroundColor = Color.FromHex("#C3CFF7");
 
             Content = new StackLayout
-            {                
+            {
+                Padding = new Thickness(20),
                 Children = {
                     bankName,
                     routingNumber,

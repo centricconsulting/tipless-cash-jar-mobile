@@ -44,29 +44,32 @@ namespace TiplessCashJar
 
         Entry zip = new Entry
         {
-            Placeholder = "Zip" 
+            Placeholder = "Zip"
         };
 
         Button saveProfileButton = new Button
         {
-            Text = "Save Button"
+            Text = "Save Button",
+            BackgroundColor = Color.FromHex("#A1B5F7")
         };
 
         Button addBankButton = new Button
         {
-            Text = "Add Bank"
+            Text = "Add Bank",
+            BackgroundColor = Color.FromHex("#A1B5F7")
         };
 
         Button addCreditButton = new Button
         {
-            Text = "Add Credit"
+            Text = "Add Credit",
+            BackgroundColor = Color.FromHex("#A1B5F7")
         };
         #endregion
-
-
+        
         public ProfilePage ()
 		{
             this.Title = "Profile";
+            this.BackgroundColor = Color.FromHex("#C3CFF7");
 
             StackLayout stack = new StackLayout();
             stack.Children.Add(firstName);

@@ -14,8 +14,11 @@ namespace TiplessCashJar
 
 		public BeaconListPage ()
 		{
-			Content = new StackLayout { 
-				Children = {
+            this.BackgroundColor = Color.FromHex("#C3CFF7");
+
+            Content = new StackLayout {
+                Padding = new Thickness(20),
+                Children = {
 					deviceListView
 				}
 			};

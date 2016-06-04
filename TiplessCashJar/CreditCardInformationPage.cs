@@ -30,21 +30,25 @@ namespace TiplessCashJar
 
         Button saveProfileButton = new Button
         {
-            Text = "Save Profile"
+            Text = "Save Profile",
+            BackgroundColor = Color.FromHex("#A1B5F7")
         };
 
         Button deleteCardButton = new Button
         {
-            Text = "Delete Card"
+            Text = "Delete Card",
+            BackgroundColor = Color.FromHex("#A1B5F7")
         };
         #endregion
 
         public CreditCardInformationPage()
         {
             this.Title = "Add Credit Card";
+            this.BackgroundColor = Color.FromHex("#C3CFF7");
 
             Content = new StackLayout
             {
+                Padding = new Thickness(20),
                 Children = {
                     nameAsAppearsOnCard,
                     cardNumber,

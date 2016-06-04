@@ -13,22 +13,27 @@ namespace TiplessCashJar
 		List<Beacon> beacons = new List<Beacon> ();
 
 		Button donateButton = new Button {
-			Text = "Donate"
-		};
+			Text = "Donate",
+            BackgroundColor = Color.FromHex("#A1B5F7")
+        };
 
 		Button profileButton = new Button {
-			Text = "Profile"
-		};
+			Text = "Profile",
+            BackgroundColor = Color.FromHex("#A1B5F7")
+        };
 
 		Button beaconsButton = new Button {
-			Text = "Beacons"
-		};
+			Text = "Beacons",
+            BackgroundColor = Color.FromHex("#A1B5F7")
+        };
 
 		public DashboardPage ()
 		{
-
-			Content = new StackLayout { 
-				Children = {
+            this.BackgroundColor = Color.FromHex("#C3CFF7");
+            
+            Content = new StackLayout {
+                Padding = new Thickness(20),
+            Children = {
 //					donateButton,
 					profileButton,
 					beaconsButton

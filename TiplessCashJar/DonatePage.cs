@@ -7,37 +7,46 @@ namespace TiplessCashJar
 	public class DonatePage : ContentPage
 	{
 		Button oneDollarButton = new Button {
-			Text = "$1"
-		};
+			Text = "$1",
+            BackgroundColor = Color.FromHex("#A1B5F7")
+        };
 
 		Button twoDollarButton = new Button {
-			Text = "$2"
-		};
+			Text = "$2",
+            BackgroundColor = Color.FromHex("#A1B5F7")
+        };
 
 		Button fourDollarButton = new Button {
-			Text = "$4"
-		};
+			Text = "$4",
+            BackgroundColor = Color.FromHex("#A1B5F7")
+        };
 
 		Label customLabel = new Label {
-			Text = "Custom"
-		};
+			Text = "Custom",
+            TextColor = Color.FromHex("#d4d2d2")
+        };
 
 		Entry customDollarEntry = new Entry {
 			Placeholder = "Custom"
-		};
+        };
 
 		Button customDollarButton = new Button {
-			Text = "Custom"
-		};
+			Text = "Custom",
+            BackgroundColor = Color.FromHex("#A1B5F7")
+        };
 
 		Button noThanksButton = new Button {
-			Text = "No Thanks!"
-		};
+			Text = "No Thanks!",
+            BackgroundColor = Color.FromHex("#A1B5F7")
+        };
 				
 		public DonatePage ()
 		{
-			Content = new StackLayout { 
-				Children = {
+            this.BackgroundColor = Color.FromHex("#C3CFF7");
+
+            Content = new StackLayout {
+                Padding = new Thickness(20),
+                Children = {
 					oneDollarButton,
 					twoDollarButton,
 					fourDollarButton,
