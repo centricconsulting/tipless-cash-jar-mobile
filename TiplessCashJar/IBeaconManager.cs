@@ -34,6 +34,10 @@ namespace TiplessCashJar
 			get {
 				return distance;
 			}
+
+			set {
+				distance = value;
+			}
 		}
 
 		public string UUID {
@@ -59,7 +63,18 @@ namespace TiplessCashJar
 				return name;
 			}
 		}
+			
+		public static Predicate<Beacon> Matcher(Beacon thatBeacon) {
+			return delegate(Beacon beacon) {
+				if (beacon.UUID.CompareTo (thatBeacon.UUID) == 0 && beacon.Minor == thatBeacon.Minor) {
+					return true;
+				}
+
+				return false;
+			};
+		}
 	}
+
 
 	public class BeaconsFoundEventArgs : EventArgs
 	{

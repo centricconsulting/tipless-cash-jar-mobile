@@ -17,6 +17,10 @@ namespace TiplessCashJar
 			Text = "id"
 		};
 
+		Label distance = new Label {
+			Text = "distance"
+		};
+
 		public BeaconPage (Beacon beacon)
 		{
 
@@ -24,11 +28,14 @@ namespace TiplessCashJar
 
 			name.Text = beacon.Name;
 			id.Text = beacon.UUID;
+			Double myDistance = beacon.Distance;
+			distance.Text = myDistance.ToString();
 
 			Content = new StackLayout {
 				Children = {
 					name,
-					id
+					id, 
+					distance
 				}
 			};
 
