@@ -3,6 +3,10 @@
 using Xamarin.Forms;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Text;
+using System.Net.Http.Headers;
+using System.Threading.Tasks;
 
 namespace TiplessCashJar
 {
@@ -103,6 +107,8 @@ namespace TiplessCashJar
 					if (answer) {
 						App.BeaconManager.StopScanning ();
 						Navigation.PushAsync (new DonatePage (myBeacon.Name));
+					} else {
+						await callRefusalWebservice (myBeacon.Name);
 					}
 				}
 			}
@@ -110,6 +116,22 @@ namespace TiplessCashJar
 
 		#endregion
 
+		protected async Task callRefusalWebservice(String beaconNumber) {
+			String urlRoot = "https://tipless-cash-jar-dev.azurewebsites.net/api/refuse/" + beaconNumber;
+
+			HttpClient client = new HttpClient ();
+			Uri uri = new Uri (urlRoot);
+
+			client.DefaultRequestHeaders
+				.Accept
+				.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+			HttpResponseMessage response = await client.PostAsync (uri, null);
+
+			if (response.IsSuccessStatusCode) {
+				String confirmation = await response.Content.ReadAsStringAsync ();
+			}
+		}
 	}
 }
 
