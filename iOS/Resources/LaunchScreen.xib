@@ -27,8 +27,9 @@
                 <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
                 <constraint id="4" firstItem="iMR-Jz-LQI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="47"/>
                 <constraint id="5" firstItem="iMR-Jz-LQI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="66"/>
-                <constraint id="6" firstItem="8ie-xW-0ye" firstAttribute="top" secondItem="iMR-Jz-LQI" secondAttribute="bottom" constant="43"/>
                 <constraint id="7" firstItem="iN0-l3-epB" firstAttribute="trailing" secondItem="iMR-Jz-LQI" secondAttribute="trailing" constant="66"/>
+                <constraint id="10" firstItem="iN0-l3-epB" firstAttribute="bottom" secondItem="iMR-Jz-LQI" secondAttribute="bottom" constant="84"/>
+                <constraint id="11" firstItem="iN0-l3-epB" firstAttribute="trailing" secondItem="iMR-Jz-LQI" secondAttribute="trailing" constant="66"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
