@@ -29,9 +29,9 @@ namespace TiplessCashJar
         };
 
 		public LoginPage ()
-		{           
-			this.Title = "Tipless Cash Jar";
+		{  
             this.BackgroundColor = Color.FromHex("#C3CFF7");
+			this.Title = "OpenAlms";
 
             Content = new StackLayout {
                 Padding = new Thickness(40),

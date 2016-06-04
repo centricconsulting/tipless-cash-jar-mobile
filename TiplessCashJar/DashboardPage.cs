@@ -41,7 +41,7 @@ namespace TiplessCashJar
 			};
 
 			donateButton.Clicked += async (object sender, EventArgs e) => {
-				await Navigation.PushAsync(new DonatePage());
+				await Navigation.PushAsync(new DonatePage(""));
 			};
 
 			profileButton.Clicked += async (object sender, EventArgs e) => {
@@ -88,10 +88,10 @@ namespace TiplessCashJar
 					if (myBeacon != null)
 						name = myBeacon.Name;
 
-					var answer = await DisplayAlert ("Tipless Cash Jar", "Would you like to donate to " + name + "?", "Yes", "No");
+					var answer = await DisplayAlert ("OpenAlms", "Would you like to donate to " + name + "?", "Yes", "No");
 					if (answer) {
 						App.BeaconManager.StopScanning ();
-						Navigation.PushAsync (new DonatePage ());
+						Navigation.PushAsync (new DonatePage (myBeacon.Name));
 					}
 				}
 			}

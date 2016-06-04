@@ -79,4 +79,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="check.png" />
+  </ItemGroup>
 </Project>
