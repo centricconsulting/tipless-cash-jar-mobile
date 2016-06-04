@@ -22,17 +22,19 @@ namespace TiplessCashJar.iOS
 		}
 			
 		public void StartScanning(List<Beacon> knownBeacons) {
-			foreach (var beacon in knownBeacons) {
-				CLBeaconRegion region = new CLBeaconRegion (new NSUuid(beacon.UUID), beacon.Name);
+			if (knownBeacons != null && knownBeacons.Count > 0) {
+				foreach (var beacon in knownBeacons) {
+					CLBeaconRegion region = new CLBeaconRegion (new NSUuid (beacon.UUID), beacon.Name);
 
-				region.NotifyOnEntry = true;
-				region.NotifyOnExit = true;
-				region.NotifyEntryStateOnDisplay = true;
+					region.NotifyOnEntry = true;
+					region.NotifyOnExit = true;
+					region.NotifyEntryStateOnDisplay = true;
 
-				regions.Add (region);
+					regions.Add (region);
 
-				locationMgr.StartMonitoring (region);
-				locationMgr.StartRangingBeacons (region);
+					locationMgr.StartMonitoring (region);
+					locationMgr.StartRangingBeacons (region);
+				}
 			}
 		}
 

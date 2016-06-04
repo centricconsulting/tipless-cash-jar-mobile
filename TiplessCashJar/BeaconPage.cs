@@ -11,17 +11,17 @@ namespace TiplessCashJar
 
 		Label name = new Label {
 			Text = "name",
-            TextColor = Color.FromHex("#d4d2d2")
+			TextColor = Color.White
         };
 
 		Label id = new Label {
 			Text = "id",
-            TextColor = Color.FromHex("#d4d2d2")
+			TextColor = Color.White
         };
 
 		Label distance = new Label {
 			Text = "distance",
-            TextColor = Color.FromHex("#d4d2d2")
+            TextColor = Color.White
         };
 
 		public BeaconPage (Beacon beacon)
