@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Linq;
 using Xamarin.Forms;
 using System.Collections.ObjectModel;
 
@@ -54,8 +54,9 @@ namespace TiplessCashJar
 		void BeaconsFound (object sender, BeaconsFoundEventArgs e)
 		{
 			if (e.Beacons.Count > 0) {
+				List<Beacon> SortedBeacons = e.Beacons.OrderBy(o=>o.Distance).ToList();
 				DiscoveredBeacons.Clear ();
-				foreach (var beacon in e.Beacons) {
+				foreach (var beacon in SortedBeacons) {
 					var myBeacon = beacons.Find (Beacon.Matcher (beacon));
 
 					if (myBeacon != null) {
