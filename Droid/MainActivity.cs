@@ -7,6 +7,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Xamarin.Forms;
 
 namespace TiplessCashJar.Droid
 {
@@ -18,6 +19,8 @@ namespace TiplessCashJar.Droid
 			base.OnCreate (bundle);
 
 			global::Xamarin.Forms.Forms.Init (this, bundle);
+
+			DependencyService.Register<IAdapter, Adapter> ();
 
 			LoadApplication (new App ());
 		}

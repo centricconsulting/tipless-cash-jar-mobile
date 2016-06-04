@@ -8,12 +8,12 @@ using System.Collections.ObjectModel;
 
 namespace TiplessCashJar
 {
-	public class BeaconPage : ContentPage
+	public class BeaconListPage : ContentPage
 	{
 		ListView deviceListView = new ListView();
 		public ObservableCollection<IDevice> DiscoveredDevices { get; private set; }
 
-		public BeaconPage ()
+		public BeaconListPage ()
 		{
 			Content = new StackLayout { 
 				Children = {
@@ -48,7 +48,7 @@ namespace TiplessCashJar
 
 		void DeviceConnected (object sender, DeviceConnectionEventArgs e)
 		{
-			Navigation.PushAsync(new DevicePage(e.Device));
+			Navigation.PushAsync(new BeaconPage(e.Device));
 		}
 
 		#endregion

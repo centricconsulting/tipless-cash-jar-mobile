@@ -14,13 +14,18 @@ namespace TiplessCashJar
 			Text = "Profile"
 		};
 
+		Button beaconsButton = new Button {
+			Text = "Beacons"
+		};
+
 		public DashboardPage ()
 		{
 
 			Content = new StackLayout { 
 				Children = {
 					donateButton,
-					profileButton
+					profileButton,
+					beaconsButton
 				}
 			};
 
@@ -32,6 +37,9 @@ namespace TiplessCashJar
 				await Navigation.PushAsync(new ProfilePage());
 			};
 
+			beaconsButton.Clicked += async (object sender, EventArgs e) => {
+				await Navigation.PushAsync(new BeaconListPage());
+			};
 		}
 	}
 }

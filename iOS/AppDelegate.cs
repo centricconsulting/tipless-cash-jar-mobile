@@ -4,6 +4,9 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using Xamarin.Forms;
+using BluetoothLE.Core;
+using BluetoothLE.iOS;
 
 namespace TiplessCashJar.iOS
 {
@@ -13,6 +16,8 @@ namespace TiplessCashJar.iOS
 		public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 		{
 			global::Xamarin.Forms.Forms.Init ();
+
+			DependencyService.Register<IAdapter, Adapter> ();
 
 			LoadApplication (new App ());
 

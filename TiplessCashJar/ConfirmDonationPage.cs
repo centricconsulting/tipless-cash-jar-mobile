@@ -29,8 +29,7 @@ namespace TiplessCashJar
 			confirmButton.Clicked += async (object sender, EventArgs e) => {
 				// call web service with dollar amount
 				callDonateWebservice("beacon", amount);
-				await Navigation.PopToRootAsync();
-			};
+				};
 
 		}
 
@@ -52,6 +51,7 @@ namespace TiplessCashJar
 			if (response.IsSuccessStatusCode) {
 				String confirmation = await response.Content.ReadAsStringAsync ();
 				DisplayAlert("Tipless Cash Jar", "Thank you for donating $" + myAmount.ToString(), "OK");
+				//-TODO Navigate back to dashboard
 			}
 		}
 			

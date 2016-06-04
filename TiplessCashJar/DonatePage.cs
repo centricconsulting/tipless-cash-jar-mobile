@@ -63,7 +63,11 @@ namespace TiplessCashJar
 			customDollarButton.Clicked += async (object sender, EventArgs e) => {
 				int custom = 0;
 				Int32.TryParse(customDollarEntry.Text, out custom);
-				await Navigation.PushAsync(new ConfirmDonationPage( custom));
+
+				if (custom > 0)
+					await Navigation.PushAsync(new ConfirmDonationPage( custom));
+				else
+					DisplayAlert("Tipless Cash Jar", "Please enter an amount", "OK");
 			};
 
 			noThanksButton.Clicked += async (object sender, EventArgs e) => {
