@@ -8,22 +8,24 @@ namespace TiplessCashJar
 	{
 		Label name = new Label {
 			Text = "name",
-			TextColor = Color.FromHex("#d4d2d2")
+			TextColor = Color.White
 		};
 
 		Label amount = new Label {
 			Text = "amount",
-			TextColor = Color.FromHex("#d4d2d2")
-		};
+			TextColor = Color.White
+        };
 
 		Label date = new Label {
 			Text = "date",
-			TextColor = Color.FromHex("#d4d2d2")
-		};
+			TextColor = Color.White
+        };
 
 		public TransactionPage (DonationTransaction transaction)
 		{
-			name.Text = transaction.Id;
+            this.BackgroundColor = Color.FromHex("#C3CFF7");
+
+            name.Text = transaction.Id;
 			date.Text = transaction.TxDate;
 			Int32 myAmount = transaction.Amount;
 			amount.Text = myAmount.ToString();
