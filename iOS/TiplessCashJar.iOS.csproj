@@ -106,6 +106,7 @@
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\iphone%403x.png" />
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\iphonespotlight%402x.png" />
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\iphonespotlight%403x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Contents.json" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />

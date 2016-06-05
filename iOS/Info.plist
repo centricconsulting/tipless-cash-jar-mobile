@@ -37,5 +37,9 @@
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
 	<string>OpenAlms</string>
+	<key>UIMainNibFile~ipad</key>
+	<string>LaunchScreen</string>
+	<key>XSLaunchImageAssets</key>
+	<string>Resources/Images.xcassets/LaunchImage.launchimage</string>
 </dict>
 </plist>
