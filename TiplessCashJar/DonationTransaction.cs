@@ -5,19 +5,19 @@ namespace TiplessCashJar
 {
 	public class DonationTransaction
 	{
-		private string name;
-		private string date;
 		private int amount;
+		private string txDate;
+		private string id;
 
-		public string Name {
+		public string Id {
 			get {
-				return name;
+				return id;
 			}
 		}
 
-		public string Date {
+		public string TxDate {
 			get {
-				return date;
+				return txDate;
 			}
 		}
 
@@ -27,10 +27,10 @@ namespace TiplessCashJar
 			}
 		}
 
-		public DonationTransaction (string name, string date, int amount)
+		public DonationTransaction (int amount, string txDate, string id)
 		{
-			this.name = name;
-			this.date = date;
+			this.id = id;
+			this.txDate = txDate;
 			this.amount = amount;
 		}
 	}

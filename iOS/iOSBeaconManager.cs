@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using CoreLocation;
 using Foundation;
+using UIKit;
 
 namespace TiplessCashJar.iOS
 {
@@ -22,6 +23,9 @@ namespace TiplessCashJar.iOS
 		}
 			
 		public void StartScanning(List<Beacon> knownBeacons) {
+			if (ObjCRuntime.Runtime.Arch == ObjCRuntime.Arch.SIMULATOR)
+				return;
+			
 			if (knownBeacons != null && knownBeacons.Count > 0) {
 				foreach (var beacon in knownBeacons) {
 					CLBeaconRegion region = new CLBeaconRegion (new NSUuid (beacon.UUID), beacon.Name);

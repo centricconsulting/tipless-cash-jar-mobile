@@ -22,8 +22,8 @@ namespace TiplessCashJar
 			if (_beaconManager != null) {
 			}
 
-			var beaconsTask = Task.Run( () => {
-				_beacons = GetBeaconsFromServer ().Result;
+			var beaconsTask = Task.Run( async () => {
+				_beacons = await GetBeaconsFromServer ().ConfigureAwait(false);
 			});
 		}
 

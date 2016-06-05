@@ -23,8 +23,8 @@ namespace TiplessCashJar
 
 		public TransactionPage (DonationTransaction transaction)
 		{
-			name.Text = transaction.Name;
-			date.Text = transaction.Date;
+			name.Text = transaction.Id;
+			date.Text = transaction.TxDate;
 			Int32 myAmount = transaction.Amount;
 			amount.Text = myAmount.ToString();
 
