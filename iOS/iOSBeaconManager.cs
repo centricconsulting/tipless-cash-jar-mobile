@@ -28,7 +28,15 @@ namespace TiplessCashJar.iOS
 			
 			if (knownBeacons != null && knownBeacons.Count > 0) {
 				foreach (var beacon in knownBeacons) {
-					CLBeaconRegion region = new CLBeaconRegion (new NSUuid (beacon.UUID), beacon.Name);
+					NSUuid uuid = null;
+
+					try {
+						uuid = new NSUuid(beacon.UUID);
+					} catch (Exception e) {
+						uuid = new NSUuid ();
+					}
+
+					CLBeaconRegion region = new CLBeaconRegion (uuid, beacon.Name);
 
 					region.NotifyOnEntry = true;
 					region.NotifyOnExit = true;
