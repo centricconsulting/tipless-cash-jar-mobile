@@ -11,7 +11,9 @@ namespace TiplessCashJar
 {
 	public class AccountActivityPage : ContentPage
 	{
-		ListView accountListView = new ListView();
+		ListView accountListView = new ListView() {
+			Header = "Date"
+		};
 		public ObservableCollection<DonationTransaction> Transactions { get; private set; }
 		List<DonationTransaction> _transactions = new List<DonationTransaction> ();
 
@@ -39,6 +41,11 @@ namespace TiplessCashJar
 
 			});
 
+			var cell = new DataTemplate (typeof(TextCell));
+			cell.SetBinding (TextCell.TextProperty, "TxDate");
+			cell.SetBinding (TextCell.DetailProperty, "Amount");
+
+			accountListView.ItemTemplate = cell;
 			accountListView.ItemsSource = Transactions;
 			accountListView.ItemSelected += TransactionSelected;
 		}

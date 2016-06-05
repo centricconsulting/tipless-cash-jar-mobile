@@ -8,7 +8,10 @@ namespace TiplessCashJar
 {
 	public class BeaconListPage : ContentPage
 	{
-		ListView deviceListView = new ListView();
+		ListView deviceListView = new ListView () {
+			Header = "Name"
+		};
+
 		public ObservableCollection<Beacon> DiscoveredBeacons { get; private set; }
 		List<Beacon> beacons = new List<Beacon> ();
 
@@ -25,6 +28,11 @@ namespace TiplessCashJar
 
 			DiscoveredBeacons = new ObservableCollection<Beacon>();
 
+			var cell = new DataTemplate (typeof(TextCell));
+			cell.SetBinding (TextCell.TextProperty, "Name");
+			cell.SetBinding (TextCell.DetailProperty, "Distance");
+
+			deviceListView.ItemTemplate = cell;
 			deviceListView.ItemsSource = DiscoveredBeacons;
 			deviceListView.ItemSelected += BeaconSelected;
 
