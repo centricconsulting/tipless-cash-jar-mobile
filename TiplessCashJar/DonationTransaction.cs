@@ -33,6 +33,11 @@ namespace TiplessCashJar
 			this.txDate = txDate;
 			this.amount = amount;
 		}
+
+		public override string ToString()
+		{
+			return TxDate;
+		}
 	}
 }
 
