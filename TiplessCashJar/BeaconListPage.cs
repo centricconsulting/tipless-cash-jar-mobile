@@ -8,10 +8,7 @@ namespace TiplessCashJar
 {
 	public class BeaconListPage : ContentPage
 	{
-		ListView deviceListView = new ListView () {
-			Header = "Name"
-		};
-
+		ListView deviceListView = new ListView ();
 		public ObservableCollection<Beacon> DiscoveredBeacons { get; private set; }
 		List<Beacon> beacons = new List<Beacon> ();
 

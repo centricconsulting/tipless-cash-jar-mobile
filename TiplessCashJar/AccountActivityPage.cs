@@ -11,9 +11,7 @@ namespace TiplessCashJar
 {
 	public class AccountActivityPage : ContentPage
 	{
-		ListView accountListView = new ListView() {
-			Header = "Date"
-		};
+		ListView accountListView = new ListView();
 		public ObservableCollection<DonationTransaction> Transactions { get; private set; }
 		List<DonationTransaction> _transactions = new List<DonationTransaction> ();
 
