@@ -15,7 +15,6 @@
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
-		<integer>2</integer>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
@@ -26,19 +25,15 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Resources/Images.xcassets/AppIcons.appiconset</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Tipless Cash Jar needs your location for beacons</string>
+	<string>OpenAlms needs your location for beacons</string>
 	<key>UIMainNibFile</key>
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
 	<string>OpenAlms</string>
-	<key>UIMainNibFile~ipad</key>
-	<string>LaunchScreen</string>
 	<key>XSLaunchImageAssets</key>
 	<string>Resources/Images.xcassets/LaunchImage.launchimage</string>
 </dict>
